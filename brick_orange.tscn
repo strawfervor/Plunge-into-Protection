@@ -1,0 +1,107 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqqepkmqutcx3"]
+
+[ext_resource type="Script" path="res://brick_orange.gd" id="1_cuacj"]
+[ext_resource type="Texture2D" uid="uid://qpgmrxoxnvuv" path="res://assets/player/brick_orange.png" id="2_ndnsy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk0wq"]
+atlas = ExtResource("2_ndnsy")
+region = Rect2(0, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq2c7"]
+atlas = ExtResource("2_ndnsy")
+region = Rect2(0, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18yt2"]
+atlas = ExtResource("2_ndnsy")
+region = Rect2(16, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm1e1"]
+atlas = ExtResource("2_ndnsy")
+region = Rect2(32, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0gsk"]
+atlas = ExtResource("2_ndnsy")
+region = Rect2(48, 0, 8, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ku6b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk0wq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq2c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18yt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm1e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0gsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm1e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18yt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq2c7")
+}],
+"loop": false,
+"name": &"hitted",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44y6f"]
+size = Vector2(8, 5.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffrfr"]
+size = Vector2(4, 3.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lh28"]
+size = Vector2(10, 4)
+
+[node name="brick_orange" type="AnimatableBody2D"]
+position = Vector2(0, -4)
+scale = Vector2(2, 2)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_cuacj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5ku6b")
+animation = &"hitted"
+
+[node name="ColisionStandard" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_44y6f")
+
+[node name="HitDetectorArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="HitDetector" type="CollisionShape2D" parent="HitDetectorArea"]
+position = Vector2(0, 4.625)
+shape = SubResource("RectangleShape2D_ffrfr")
+debug_color = Color(0.945098, 0, 0.592157, 0.419608)
+
+[node name="EnemyOnFloor" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyOnFloor"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_5lh28")
+debug_color = Color(0.654902, 0.517647, 0, 0.419608)
+
+[connection signal="body_entered" from="HitDetectorArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="EnemyOnFloor" to="." method="_on_enemy_on_floor_body_entered"]
+[connection signal="body_exited" from="EnemyOnFloor" to="." method="_on_enemy_on_floor_body_exited"]

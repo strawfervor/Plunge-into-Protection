@@ -1,0 +1,114 @@
+[gd_scene load_steps=13 format=3 uid="uid://c64e1rsfonuh1"]
+
+[ext_resource type="Script" path="res://enemy_rat.gd" id="1_837ao"]
+[ext_resource type="Texture2D" uid="uid://imxuc7is2tty" path="res://assets/enemies/rat.png" id="1_sy3n6"]
+[ext_resource type="Texture2D" uid="uid://ddyfcj1fua5cj" path="res://assets/purple_dot.png" id="3_1s0bb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tc5d"]
+atlas = ExtResource("1_sy3n6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5j5e"]
+atlas = ExtResource("1_sy3n6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnmcy"]
+atlas = ExtResource("1_sy3n6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jynrc"]
+atlas = ExtResource("1_sy3n6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ss4ti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tc5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5j5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnmcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jynrc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63hbp"]
+size = Vector2(24, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lip46"]
+size = Vector2(28, 6.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jvkw"]
+size = Vector2(28, 20)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o0yix"]
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_sphere_radius = 11.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 200, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+
+[node name="EnemyRat" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_837ao")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ss4ti")
+frame_progress = 0.80335
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_63hbp")
+
+[node name="ChangeDirDetect" type="Area2D" parent="." groups=["enemy"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeDirDetect"]
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_lip46")
+debug_color = Color(0.776471, 0.376471, 0.592157, 0.419608)
+
+[node name="HittedTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="KillingArea" type="Area2D" parent="."]
+
+[node name="KillMeArea" type="CollisionShape2D" parent="KillingArea"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_0jvkw")
+debug_color = Color(0.929412, 0, 0.658824, 0.419608)
+
+[node name="DeadParticles" type="GPUParticles2D" parent="."]
+position = Vector2(0, 8)
+emitting = false
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_o0yix")
+texture = ExtResource("3_1s0bb")
+one_shot = true
+explosiveness = 0.3
+metadata/_edit_group_ = true
+
+[node name="DeleteItsDead" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_shape_entered" from="ChangeDirDetect" to="." method="_on_change_dir_detect_body_shape_entered"]
+[connection signal="timeout" from="HittedTimer" to="." method="_on_hitted_timer_timeout"]
+[connection signal="body_shape_entered" from="KillingArea" to="." method="_on_killing_area_body_shape_entered"]
+[connection signal="timeout" from="DeleteItsDead" to="." method="_on_delete_its_dead_timeout"]
