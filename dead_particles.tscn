@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://pmtosqdipv63"]
+
+[ext_resource type="Texture2D" uid="uid://ddyfcj1fua5cj" path="res://assets/purple_dot.png" id="1_6mq2d"]
+[ext_resource type="Script" path="res://dead_particles.gd" id="2_eae2o"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xiehp"]
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_sphere_radius = 11.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 200, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+
+[node name="DeadParticles" type="GPUParticles2D"]
+position = Vector2(0, 8)
+emitting = false
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_xiehp")
+texture = ExtResource("1_6mq2d")
+one_shot = true
+explosiveness = 0.3
+script = ExtResource("2_eae2o")
+metadata/_edit_group_ = true

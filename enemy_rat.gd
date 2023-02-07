@@ -6,9 +6,9 @@ var speed_restore = SPEED
 const JUMP_VELOCITY = -400.0
 var direction_set = 0
 var hitted = false
-var to_delete = false
 var times_flipped = 0
 var gravity = 2000
+var dead_particles = preload("res://dead_particles.tscn")
 
 func _ready():
 	#directory depends on spawned position
@@ -69,27 +69,25 @@ func hit():
 
 #when timer started in func hit() is zero:
 func _on_hitted_timer_timeout():
-	if to_delete == false:
-		$AnimatedSprite2D.flip_v = false #go back on legs dear enemy
-		if times_flipped < 5:
-			SPEED = speed_restore + 20 #set speed back to default speed
-		else:
-			SPEED = speed_restore
-		hitted = false #hitted flag off
-		$AnimatedSprite2D.offset.y = 0 #set back offset to default
+	$AnimatedSprite2D.flip_v = false #go back on legs dear enemy
+	if times_flipped < 5:
+		SPEED = speed_restore + 20 #set speed back to default speed
+	else:
+		SPEED = speed_restore
+	hitted = false #hitted flag off
+	$AnimatedSprite2D.offset.y = 0 #set back offset to default
 
 #when something (player) collided with bigger "killing" detector
 func _on_killing_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if hitted == true && body.is_in_group("player"): #checking if enemy is on backs and if body is player
-		$DeadParticles.emitting = true #start emmiting particles
-		$AnimatedSprite2D.hide() #hide sprite
-		to_delete = true #mark as to delete
-		$DeleteItsDead.start() #start DeleteItsDead timer, when its timeout func below is starting
+		bleed_enemy() #call the bleed function that spawns particle and sends information to spawner that enemy is killed
+		queue_free() #delete object
 
-#when DeleteItsDead timer runout, enemy is deleted
-func _on_delete_its_dead_timeout():
-	if to_delete == true && $DeadParticles.emitting == false:
-		print("deleted!")
-		var spawner = get_parent().get_node("EnemySpawner")
-		spawner.enemy_killed()
-		queue_free()
+func bleed_enemy():
+	var root = get_parent() #get the parent node
+	var spawner = get_parent().get_node("EnemySpawner") #get the enemie spawner node, from parent node
+	spawner.enemy_killed() #call enemy_killed func from spawner node
+	var new_particles = dead_particles.instantiate() #create new dead_particles object
+	new_particles.position = self.position #set its position to position of enemy
+	new_particles.position.y += 7 #put it bit lower xD
+	root.add_child(new_particles) #add it to the root node
