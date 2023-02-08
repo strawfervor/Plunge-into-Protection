@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct3exnf34i4kv"]
+
+[ext_resource type="Script" path="res://re_spawn_platform.gd" id="1_7mvd0"]
+[ext_resource type="Texture2D" uid="uid://c1snys4h3ystd" path="res://assets/bricks/respawn_brick.png" id="2_qhjgf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q37t"]
+size = Vector2(32, 1.5)
+
+[node name="RespawnPlatform" type="AnimatableBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_7mvd0")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qhjgf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.25)
+shape = SubResource("RectangleShape2D_2q37t")

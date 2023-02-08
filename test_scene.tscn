@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://curidcrjv8g00"]
 
 [ext_resource type="PackedScene" uid="uid://eqiu4p13t3kr" path="res://Player.tscn" id="1_iv0yg"]
-[ext_resource type="PackedScene" uid="uid://cqqepkmqutcx3" path="res://brick_orange.tscn" id="2_0ih2h"]
+[ext_resource type="PackedScene" uid="uid://c3tvlot7rc2q8" path="res://brick_orange.tscn" id="2_0ih2h"]
 [ext_resource type="PackedScene" uid="uid://c64e1rsfonuh1" path="res://enemy_rat.tscn" id="3_xhipk"]
 [ext_resource type="PackedScene" uid="uid://bxgnpy7efxv2u" path="res://enemy_spawner.tscn" id="4_y7g3h"]
 
@@ -58,10 +58,10 @@ position = Vector2(184, 285)
 position = Vector2(200, 285)
 
 [node name="brick_orange52" parent="bricssss" instance=ExtResource("2_0ih2h")]
-position = Vector2(216, 285)
+position = Vector2(232, 285)
 
 [node name="brick_orange11" parent="bricssss" instance=ExtResource("2_0ih2h")]
-position = Vector2(232, 285)
+position = Vector2(216, 285)
 
 [node name="brick_orange53" parent="bricssss" instance=ExtResource("2_0ih2h")]
 position = Vector2(248, 285)

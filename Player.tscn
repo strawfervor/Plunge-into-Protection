@@ -1,15 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://eqiu4p13t3kr"]
+[gd_scene load_steps=12 format=3 uid="uid://eqiu4p13t3kr"]
 
 [ext_resource type="Texture2D" uid="uid://bxrewun6s6vd" path="res://assets/player/walking.png" id="1_gn2pq"]
 [ext_resource type="Texture2D" uid="uid://dnox5fjxr1k3p" path="res://assets/player/jumping.png" id="1_rsdqq"]
 [ext_resource type="Script" path="res://Player.gd" id="1_sq8lg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2vxx1"]
-atlas = ExtResource("1_rsdqq")
-region = Rect2(0, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_cjir2"]
 atlas = ExtResource("1_gn2pq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vxx1"]
+atlas = ExtResource("1_rsdqq")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nltci"]
@@ -26,6 +26,14 @@ region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y2q0q"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjir2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2vxx1")
@@ -55,6 +63,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqolo"]
 size = Vector2(8, 13.6667)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dg2a0"]
+radius = 3.5
+height = 14.0
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_sq8lg")
@@ -62,9 +74,24 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y2q0q")
-animation = &"jump"
+animation = &"idle"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.16667)
 shape = SubResource("RectangleShape2D_fqolo")
+
+[node name="CollisionArea" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionDetector" type="CollisionShape2D" parent="CollisionArea"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_dg2a0")
+metadata/_edit_group_ = true
+
+[node name="AfterDeadTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_shape_entered" from="CollisionArea" to="." method="_on_collision_area_body_shape_entered"]
+[connection signal="timeout" from="AfterDeadTimer" to="." method="_on_after_dead_timer_timeout"]
