@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://h177q5e1n3vh"]
+
+[ext_resource type="Script" path="res://smaller_nodes/pow_block.gd" id="1_3cjje"]
+[ext_resource type="Texture2D" uid="uid://dlxad7pl6aapf" path="res://assets/bricks/warning_block.png" id="1_4tbnx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5742p"]
+atlas = ExtResource("1_4tbnx")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8avwb"]
+atlas = ExtResource("1_4tbnx")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xagsf"]
+atlas = ExtResource("1_4tbnx")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bnhnl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5742p")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8avwb")
+}],
+"loop": true,
+"name": &"half",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xagsf")
+}],
+"loop": true,
+"name": &"quarter",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0xch"]
+size = Vector2(24, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1w281"]
+size = Vector2(16, 16)
+
+[node name="POW_block" type="AnimatableBody2D"]
+script = ExtResource("1_3cjje")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bnhnl")
+animation = &"full"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_e0xch")
+
+[node name="CollisionDetect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionDetect"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_1w281")
+debug_color = Color(0.921569, 0.247059, 0.352941, 0.419608)
+
+[connection signal="body_shape_entered" from="CollisionDetect" to="." method="_on_collision_detect_body_shape_entered"]

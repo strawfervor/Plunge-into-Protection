@@ -32,9 +32,9 @@ func spawn_enemy(random): #can be true, or index number
 		#checking what side of map should spawn enemy
 		var spawn_position = Vector2(32,32)
 		if spawned_already % 2 == 0:
-			spawn_position = Vector2(32, 32)
+			spawn_position = Vector2(48, 62)
 		else:
-			spawn_position = Vector2(480, 32)
+			spawn_position = Vector2(458, 62)
 		
 		new_enemy.position = spawn_position
 		spawned_already += 1

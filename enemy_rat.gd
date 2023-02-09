@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var SPEED = 100.0
+var SPEED = 130.0
 var speed_restore = SPEED
 const JUMP_VELOCITY = -400.0
 var direction_set = 0

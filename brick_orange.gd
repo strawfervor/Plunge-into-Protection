@@ -23,3 +23,7 @@ func _on_enemy_on_floor_body_entered(body):
 
 func _on_enemy_on_floor_body_exited(body):
 	overlaping = null
+
+func hitted_pow_block():
+	$AnimatedSprite2D.animation = "hitted"
+	$AnimatedSprite2D.play()

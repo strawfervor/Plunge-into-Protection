@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://7vrcmfspj4ku"]
+
+[ext_resource type="Texture2D" uid="uid://byc7rnx4lo0fg" path="res://assets/floor/brick_solid_purple.png" id="1_snlba"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbjis"]
+size = Vector2(28, 8)
+
+[node name="StaticBrickPurple" type="StaticBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 7
+collision_mask = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_snlba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_pbjis")
