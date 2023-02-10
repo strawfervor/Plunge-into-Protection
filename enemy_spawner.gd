@@ -21,7 +21,7 @@ func spawn_enemy(random): #can be true, or index number
 	#varible to hold enemy type
 	var new_enemy
 	#checking if enemy total is lower or equal max_enemies to not spawn too much enemies
-	if spawned_already - enemies_killed < max_enemies:
+	if spawned_already < max_enemies:
 		#checking if need to give random enemy or specific one
 		if random:
 			var array_index = rng.randi_range(0, enemies.size() - 1)
@@ -46,6 +46,15 @@ func spawn_enemy(random): #can be true, or index number
 func _on_spawn_time_timeout():
 	spawn_enemy(true)
 
+#function doing somethin when enemy is killed (now it is only counting them, and calling detection for last one)
 func enemy_killed():
 	enemies_killed += 1
-	print("Spawned: ", spawned_already, "Killed: ", enemies_killed)
+	print("Spawned: ", spawned_already, " Killed: ", enemies_killed)
+	last_enemy_detection()
+
+#if last enemy - give it a speed boost
+func last_enemy_detection():
+	var last_enemies = get_tree().get_nodes_in_group("enemy")
+	if enemies_killed == spawned_already - 1:
+		for e in last_enemies:
+			e.SPEED += 100
