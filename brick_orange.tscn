@@ -69,7 +69,7 @@ size = Vector2(4, 3.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lh28"]
 size = Vector2(10, 4)
 
-[node name="brick_orange" type="AnimatableBody2D" groups=["brick"]]
+[node name="brick_orange" type="AnimatableBody2D" groups=["brick", "floor"]]
 position = Vector2(0, -4)
 scale = Vector2(2, 2)
 collision_layer = 3

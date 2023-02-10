@@ -48,7 +48,7 @@ size = Vector2(24, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1w281"]
 size = Vector2(16, 16)
 
-[node name="POW_block" type="AnimatableBody2D"]
+[node name="POW_block" type="AnimatableBody2D" groups=["floor"]]
 script = ExtResource("1_3cjje")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

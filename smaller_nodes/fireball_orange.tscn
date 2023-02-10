@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://0ac1g6bbhqsq"]
+
+[ext_resource type="Texture2D" uid="uid://cohwjsksefyxu" path="res://assets/misc/fireball_orange.png" id="1_467oj"]
+[ext_resource type="Script" path="res://smaller_nodes/fireball_orange.gd" id="1_yspna"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sjb36"]
+radius = 4.0
+height = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_byk0u"]
+radius = 4.5
+
+[node name="FireballOrange" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_yspna")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_467oj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_sjb36")
+
+[node name="Detections" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detections"]
+shape = SubResource("CircleShape2D_byk0u")
+debug_color = Color(0.980392, 0, 0.392157, 0.419608)
+
+[connection signal="body_shape_entered" from="Detections" to="." method="_on_detections_body_shape_entered"]

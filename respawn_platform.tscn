@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2q37t"]
 size = Vector2(32, 1.5)
 
-[node name="RespawnPlatform" type="AnimatableBody2D"]
+[node name="RespawnPlatform" type="AnimatableBody2D" groups=["floor"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_7mvd0")
 metadata/_edit_group_ = true
