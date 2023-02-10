@@ -1,5 +1,7 @@
 extends AnimatableBody2D
 
+var status = 3
+
 func _ready():
 	$AnimatedSprite2D.animation = "full"
 
@@ -9,8 +11,10 @@ func _on_collision_detect_body_shape_entered(body_rid, body, body_shape_index, l
 		hit_all_bricks()
 		if $AnimatedSprite2D.animation == "full":
 			$AnimatedSprite2D.animation = "half"
+			status = 2
 		elif $AnimatedSprite2D.animation == "half":
 			$AnimatedSprite2D.animation = "quarter"
+			status = 1
 		elif $AnimatedSprite2D.animation == "quarter":
 			queue_free()
 
