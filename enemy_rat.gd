@@ -9,6 +9,7 @@ var hitted = false
 var times_flipped = 0
 var gravity = 2000
 var dead_particles = preload("res://dead_particles.tscn")
+var root
 
 func _ready():
 	#directory depends on spawned position
@@ -16,6 +17,7 @@ func _ready():
 		direction_set = 1
 	else:
 		direction_set = -1
+	root = get_parent() #get the parent node
 
 
 func _physics_process(delta):
@@ -38,17 +40,16 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play()
 
 	move_and_slide()
-	
 	#two if statements for moving character from one side to otherone
-	if position.x < -6 and position.y < 250:
-		position.x = 516
-	elif position.x < -6:
+	if position.x < 30 and position.y > 256:
 		position = Vector2(516, 60)
+	elif position.x < -6:
+		position.x = 516 
 	#player leave on right - position is swapped to left
-	if position.x > 516 and position.y < 250:
-		position.x = -1
-	elif position.x > 516:
+	if position.x > 482 and position.y > 256:
 		position = Vector2(-1, 60)
+	elif position.x > 516:
+		position.x = -1
 
 
 
@@ -84,10 +85,9 @@ func _on_killing_area_body_shape_entered(body_rid, body, body_shape_index, local
 		queue_free() #delete object
 
 func bleed_enemy():
-	var root = get_parent() #get the parent node
 	var spawner = get_parent().get_node("EnemySpawner") #get the enemie spawner node, from parent node
 	spawner.enemy_killed() #call enemy_killed func from spawner node
 	var new_particles = dead_particles.instantiate() #create new dead_particles object
 	new_particles.position = self.position #set its position to position of enemy
-	new_particles.position.y += 7 #put it bit lower xD
+	new_particles.position.y += 7 #put it bit lower
 	root.add_child(new_particles) #add it to the root node
