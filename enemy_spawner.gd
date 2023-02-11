@@ -4,16 +4,18 @@ var spawned_already = 0
 var fireball = preload("res://smaller_nodes/fireball_orange.tscn")
 var rat = preload("res://enemy_rat.tscn")
 var scorpio = preload("res://enemies/enemy_scorpio.tscn")
+var fly = preload("res://enemies/enemy_fly.tscn")
 var enemies = [
 	rat,
-	scorpio
+	scorpio,
+	fly
 	]
 
 var rng = RandomNumberGenerator.new()
 var root #this varible is used to store node root scene
 
 var enemies_killed = 0
-@export var max_enemies = 2
+@export var max_enemies = 3
 
 func _ready():
 	root = get_parent()
