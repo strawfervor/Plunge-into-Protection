@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://curidcrjv8g00"]
+[gd_scene load_steps=7 format=3 uid="uid://curidcrjv8g00"]
 
 [ext_resource type="PackedScene" uid="uid://eqiu4p13t3kr" path="res://Player.tscn" id="1_iv0yg"]
 [ext_resource type="PackedScene" uid="uid://c3tvlot7rc2q8" path="res://brick_orange.tscn" id="2_0ih2h"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bxgnpy7efxv2u" path="res://enemy_spawner.tscn" id="4_y7g3h"]
 [ext_resource type="Texture2D" uid="uid://bv8e82ggpj1p" path="res://assets/misc/pipe.png" id="5_37j1x"]
 [ext_resource type="PackedScene" uid="uid://h177q5e1n3vh" path="res://smaller_nodes/pow_block.tscn" id="6_omcic"]
-[ext_resource type="PackedScene" uid="uid://0ac1g6bbhqsq" path="res://smaller_nodes/fireball_orange.tscn" id="7_wwhya"]
 
 [node name="test-scene" type="Node2D"]
 
@@ -300,6 +299,3 @@ flip_h = true
 
 [node name="POW_block" parent="." instance=ExtResource("6_omcic")]
 position = Vector2(256, 208)
-
-[node name="FireballOrange" parent="." instance=ExtResource("7_wwhya")]
-position = Vector2(392, 184)
