@@ -23,6 +23,6 @@ func _next_level():
 	$UI/PhaseShow.start()
 	var cur_level = level_number % 9
 	if (cur_level) > 0:
-		level.load_level(cur_level, level_number)
+		level.load_level((cur_level - 1), level_number)
 	else:
 		level.load_level(9, level_number)
