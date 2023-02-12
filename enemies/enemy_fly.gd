@@ -101,3 +101,9 @@ func bleed_enemy():
 
 func _OnFloorTimer_timeout():
 	pass # Replace with function body.
+
+func SPEED_up(number):
+	if hitted == false:
+		SPEED += number
+	else:
+		speed_restore += number

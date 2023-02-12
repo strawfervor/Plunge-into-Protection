@@ -10,7 +10,7 @@
 [node name="test-scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_iv0yg")]
-position = Vector2(48, 256)
+position = Vector2(256, 264)
 
 [node name="bricssss" type="Node" parent="."]
 

@@ -91,3 +91,9 @@ func bleed_enemy():
 	new_particles.position = self.position #set its position to position of enemy
 	new_particles.position.y += 7 #put it bit lower
 	root.add_child(new_particles) #add it to the root node
+
+func SPEED_up(number):
+	if hitted == false:
+		SPEED += number
+	else:
+		speed_restore += number

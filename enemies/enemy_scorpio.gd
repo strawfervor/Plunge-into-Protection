@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var SPEED = 130.0
+var SPEED = 100.0
 var speed_restore = SPEED
 const JUMP_VELOCITY = -400.0
 var direction_set = 0
@@ -67,7 +67,7 @@ func hit():
 	if hitted == false && hitted_once == false && already_hitted == false:
 		hitted_once = true
 		already_hitted = true
-		SPEED += 50
+		SPEED += 20
 		speed_restore = SPEED
 		$HittedTimer.start()
 	elif hitted == false && hitted_once == true && already_hitted == false:
@@ -103,3 +103,9 @@ func bleed_enemy():
 	new_particles.position = self.position #set its position to position of enemy
 	new_particles.position.y += 7 #put it bit lower
 	root.add_child(new_particles) #add it to the root node
+
+func SPEED_up(number):
+	if hitted == false:
+		SPEED += number
+	else:
+		speed_restore += number
