@@ -25,6 +25,8 @@ var enemies_killed = 0
 
 var level_finished = false
 
+signal add_points
+
 func _ready():
 	root = get_parent()
 	rng.randomize()
@@ -67,6 +69,7 @@ func _on_spawn_time_timeout():
 #function doing somethin when enemy is killed (now it is only counting them, and calling detection for last one)
 func enemy_killed():
 	enemies_killed += 1
+	add_points.emit()
 	#print("Spawned: ", spawned_already, " Killed: ", enemies_killed)
 	last_enemy_detection()
 	if (spawned_already == max_enemies) && ((spawned_already - enemies_killed) == 0):

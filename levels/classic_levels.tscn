@@ -31,7 +31,26 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
+[node name="Points" type="Label" parent="UI"]
+offset_left = 5.0
+offset_right = 189.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_iabf4")
+text = "points:"
+vertical_alignment = 1
+
 [node name="Level" type="Node2D" parent="."]
 script = ExtResource("1_g0x7n")
 
+[node name="NextLevelTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -20
+offset_right = 539.0
+offset_bottom = 315.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="timeout" from="UI/PhaseShow" to="." method="_on_phase_show_timeout"]
+[connection signal="timeout" from="NextLevelTimer" to="." method="_on_next_level_timer_timeout"]

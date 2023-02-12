@@ -22,6 +22,10 @@ var root
 var level_loaded = false
 var spawner
 
+var points = 0
+
+var pow_block_status = 3
+
 signal next_level_please
 
 func _process(delta):
@@ -49,8 +53,17 @@ func set_level(number, speed):
 	spawner.max_enemies = 1
 	spawner.enemies_list = levels_array[number] #list of enemies to spawn (rat, scorpio, fly)
 	spawner.speed_modificator = speed
+	spawner.add_points.connect(_add_points)
+	current_level.get_node("POW_block").hitted_pow_block.connect(_hitted_pow_block)
+	current_level.get_node("POW_block").status = pow_block_status
 
 func on_finished_level():
 	level_loaded = false
 	remove_child(current_level)
 	next_level_please.emit()
+
+func _add_points():
+	root.update_score()
+	
+func _hitted_pow_block():
+	pow_block_status -= 1
