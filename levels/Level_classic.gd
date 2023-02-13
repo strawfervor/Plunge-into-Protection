@@ -43,6 +43,7 @@ func load_level(level_number, speed_modificator):
 	set_level(level_number, speed_modificator)
 	level_loaded = true
 	add_child(current_level)
+	current_level.get_node("Player").im_dead.connect(_player_dead)
 
 func stats_update():
 	print("stats update")
@@ -67,3 +68,6 @@ func _add_points():
 	
 func _hitted_pow_block():
 	pow_block_status -= 1
+
+func _player_dead():
+	root.live_lost()

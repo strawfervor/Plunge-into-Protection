@@ -8,6 +8,7 @@ extends CharacterBody2D
 var is_moving = false
 signal jumping
 var respawn_platform = preload("res://respawn_platform.tscn")
+signal im_dead
 
 func _physics_process(delta):
 	#old movment in now in function:
@@ -40,6 +41,7 @@ func _physics_process(delta):
 		dead()
 
 func dead():
+	im_dead.emit()
 	var new_resp_platform = respawn_platform.instantiate()
 	new_resp_platform.position = Vector2(255, 40)
 	add_sibling(new_resp_platform)

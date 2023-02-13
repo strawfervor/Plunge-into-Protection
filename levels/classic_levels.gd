@@ -31,6 +31,11 @@ func update_score():
 	$UI/Points.text = "SCORE: " + str(points)
 	$UI/Points.show()
 
+func live_lost():
+	points -= 200
+	$UI/Points.text = "SCORE: " + str(points)
+	$UI/Points.show()
+
 
 func _on_next_level_timer_timeout():
 	var cur_level = level_number % 9
