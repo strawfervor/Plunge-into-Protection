@@ -1,0 +1,301 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvenejakay3n5"]
+
+[ext_resource type="PackedScene" uid="uid://eqiu4p13t3kr" path="res://Player.tscn" id="1_lhvgq"]
+[ext_resource type="PackedScene" uid="uid://7vrcmfspj4ku" path="res://smaller_nodes/static_brick_purple.tscn" id="3_85ydn"]
+[ext_resource type="PackedScene" uid="uid://bxgnpy7efxv2u" path="res://enemy_spawner.tscn" id="4_jelk5"]
+[ext_resource type="Texture2D" uid="uid://bv8e82ggpj1p" path="res://assets/misc/pipe.png" id="5_brya6"]
+[ext_resource type="PackedScene" uid="uid://h177q5e1n3vh" path="res://smaller_nodes/pow_block.tscn" id="6_mpycg"]
+[ext_resource type="PackedScene" uid="uid://bj772e7rnd5f5" path="res://smaller_nodes/brick_classic_gemlike_purple.tscn" id="7_1d12m"]
+
+[node name="test-scene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_lhvgq")]
+position = Vector2(256, 264)
+
+[node name="bricssss" type="Node" parent="."]
+
+[node name="brick_classic_gemlike_purple23" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(136, 152)
+
+[node name="brick_classic_gemlike_purple24" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(152, 152)
+
+[node name="brick_classic_gemlike_purple25" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(168, 152)
+
+[node name="brick_classic_gemlike_purple30" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(184, 152)
+
+[node name="brick_classic_gemlike_purple31" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(200, 152)
+
+[node name="brick_classic_gemlike_purple58" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(216, 152)
+
+[node name="brick_classic_gemlike_purple32" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(232, 152)
+
+[node name="brick_classic_gemlike_purple59" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(248, 152)
+
+[node name="brick_classic_gemlike_purple33" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(264, 152)
+
+[node name="brick_classic_gemlike_purple60" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(280, 152)
+
+[node name="brick_classic_gemlike_purple34" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(296, 152)
+
+[node name="brick_classic_gemlike_purple70" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(312, 152)
+
+[node name="brick_classic_gemlike_purple35" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(328, 152)
+
+[node name="brick_classic_gemlike_purple71" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(344, 152)
+
+[node name="brick_classic_gemlike_purple36" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(360, 152)
+
+[node name="brick_classic_gemlike_purple72" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(376, 152)
+
+[node name="brick_classic_gemlike_purple73" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(344, 220)
+
+[node name="brick_classic_gemlike_purple42" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(360, 220)
+
+[node name="brick_classic_gemlike_purple74" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(376, 220)
+
+[node name="brick_classic_gemlike_purple43" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(392, 220)
+
+[node name="brick_classic_gemlike_purple75" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(408, 220)
+
+[node name="brick_classic_gemlike_purple44" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(424, 220)
+
+[node name="brick_classic_gemlike_purple76" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(440, 220)
+
+[node name="brick_classic_gemlike_purple45" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(456, 220)
+
+[node name="brick_classic_gemlike_purple77" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(472, 220)
+
+[node name="brick_classic_gemlike_purple46" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(488, 220)
+
+[node name="brick_classic_gemlike_purple78" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(504, 220)
+
+[node name="brick_classic_gemlike_purple94" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(8, 220)
+
+[node name="brick_classic_gemlike_purple95" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(24, 220)
+
+[node name="brick_classic_gemlike_purple96" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(40, 220)
+
+[node name="brick_classic_gemlike_purple105" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(8, 160)
+
+[node name="brick_classic_gemlike_purple106" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(24, 160)
+
+[node name="brick_classic_gemlike_purple107" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(40, 160)
+
+[node name="brick_classic_gemlike_purple116" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(56, 160)
+
+[node name="brick_classic_gemlike_purple108" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(472, 160)
+
+[node name="brick_classic_gemlike_purple117" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(456, 160)
+
+[node name="brick_classic_gemlike_purple109" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(488, 160)
+
+[node name="brick_classic_gemlike_purple110" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(504, 160)
+
+[node name="brick_classic_gemlike_purple97" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(56, 220)
+
+[node name="brick_classic_gemlike_purple98" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(72, 220)
+
+[node name="brick_classic_gemlike_purple99" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(88, 220)
+
+[node name="brick_classic_gemlike_purple100" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(104, 220)
+
+[node name="brick_classic_gemlike_purple101" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(120, 220)
+
+[node name="brick_classic_gemlike_purple102" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(136, 220)
+
+[node name="brick_classic_gemlike_purple103" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(152, 220)
+
+[node name="brick_classic_gemlike_purple104" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(168, 220)
+
+[node name="brick_classic_gemlike_purple111" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(184, 220)
+
+[node name="brick_classic_gemlike_purple112" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(200, 220)
+
+[node name="brick_classic_gemlike_purple113" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(312, 220)
+
+[node name="brick_classic_gemlike_purple114" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(328, 220)
+
+[node name="brick_classic_gemlike_purple26" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(312, 88)
+
+[node name="brick_classic_gemlike_purple27" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(328, 88)
+
+[node name="brick_classic_gemlike_purple61" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(344, 88)
+
+[node name="brick_classic_gemlike_purple28" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(360, 88)
+
+[node name="brick_classic_gemlike_purple62" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(376, 88)
+
+[node name="brick_classic_gemlike_purple29" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(392, 88)
+
+[node name="brick_classic_gemlike_purple63" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(408, 88)
+
+[node name="brick_classic_gemlike_purple64" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(424, 88)
+
+[node name="brick_classic_gemlike_purple65" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(440, 88)
+
+[node name="brick_classic_gemlike_purple66" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(456, 88)
+
+[node name="brick_classic_gemlike_purple67" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(472, 88)
+
+[node name="brick_classic_gemlike_purple68" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(488, 88)
+
+[node name="brick_classic_gemlike_purple69" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(504, 88)
+
+[node name="brick_classic_gemlike_purple12" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(8, 88)
+
+[node name="brick_classic_gemlike_purple16" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(24, 88)
+
+[node name="brick_classic_gemlike_purple13" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(40, 88)
+
+[node name="brick_classic_gemlike_purple17" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(56, 88)
+
+[node name="brick_classic_gemlike_purple18" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(72, 88)
+
+[node name="brick_classic_gemlike_purple54" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(88, 88)
+
+[node name="brick_classic_gemlike_purple19" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(104, 88)
+
+[node name="brick_classic_gemlike_purple55" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(120, 88)
+
+[node name="brick_classic_gemlike_purple20" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(136, 88)
+
+[node name="brick_classic_gemlike_purple56" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(152, 88)
+
+[node name="brick_classic_gemlike_purple21" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(168, 88)
+
+[node name="brick_classic_gemlike_purple57" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(184, 88)
+
+[node name="StaticBrickPurple" parent="bricssss" instance=ExtResource("3_85ydn")]
+position = Vector2(24, 296)
+
+[node name="StaticBrickPurple2" parent="bricssss" instance=ExtResource("3_85ydn")]
+position = Vector2(80, 296)
+
+[node name="StaticBrickPurple3" parent="bricssss" instance=ExtResource("3_85ydn")]
+position = Vector2(136, 296)
+
+[node name="StaticBrickPurple4" parent="bricssss" instance=ExtResource("3_85ydn")]
+position = Vector2(192, 296)
+
+[node name="StaticBrickPurple5" parent="bricssss" instance=ExtResource("3_85ydn")]
+position = Vector2(248, 296)
+
+[node name="StaticBrickPurple6" parent="bricssss" instance=ExtResource("3_85ydn")]
+position = Vector2(304, 296)
+
+[node name="StaticBrickPurple7" parent="bricssss" instance=ExtResource("3_85ydn")]
+position = Vector2(360, 296)
+
+[node name="StaticBrickPurple8" parent="bricssss" instance=ExtResource("3_85ydn")]
+position = Vector2(416, 296)
+
+[node name="StaticBrickPurple9" parent="bricssss" instance=ExtResource("3_85ydn")]
+position = Vector2(472, 296)
+
+[node name="StaticBrickPurple10" parent="bricssss" instance=ExtResource("3_85ydn")]
+position = Vector2(528, 296)
+
+[node name="brick_classic_gemlike_purple22" parent="bricssss" instance=ExtResource("7_1d12m")]
+position = Vector2(200, 88)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("4_jelk5")]
+position = Vector2(256, 16)
+
+[node name="Pipe" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(0, 272)
+texture = ExtResource("5_brya6")
+
+[node name="Pipe3" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(24, 68)
+texture = ExtResource("5_brya6")
+
+[node name="Pipe2" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(488, 68)
+texture = ExtResource("5_brya6")
+flip_h = true
+
+[node name="Pipe4" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(512, 272)
+texture = ExtResource("5_brya6")
+flip_h = true
+
+[node name="POW_block" parent="." instance=ExtResource("6_mpycg")]
+position = Vector2(256, 208)
