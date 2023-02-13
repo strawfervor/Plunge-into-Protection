@@ -69,7 +69,7 @@ func hit():
 		already_hitted = true
 		SPEED += 20
 		speed_restore = SPEED
-		$HittedTimer.start()
+		$HittedTimer2.start()
 	elif hitted == false && hitted_once == true && already_hitted == false:
 		times_flipped += 1
 		hitted = true #flag hitted on
@@ -109,3 +109,14 @@ func SPEED_up(number):
 		SPEED += number
 	else:
 		speed_restore += number
+
+
+func _on_hitted_timer_2_timeout():
+	$AnimatedSprite2D.flip_v = false #go back on legs dear enemy
+	if times_flipped < 5 && hitted_once == true:
+		SPEED = speed_restore + 20 #set speed back to default speed
+	elif hitted_once == true:
+		SPEED = speed_restore
+	hitted = false #hitted flag off
+	already_hitted = false
+	$AnimatedSprite2D.offset.y = 0 #set back offset to default

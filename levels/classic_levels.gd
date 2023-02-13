@@ -6,6 +6,7 @@ var score = 0
 var enemies_left = 0
 var level
 var points = 0
+var level_type = 1
 
 func _ready():
 	$UI/Phase.text = "PHASE " + str(level_number)
@@ -39,7 +40,15 @@ func live_lost():
 
 func _on_next_level_timer_timeout():
 	var cur_level = level_number % 9
-	if (cur_level) > 0:
-		level.load_level((cur_level - 1), level_number)
+	if cur_level == 1 or cur_level == 2:
+		level_type = 1
+	elif cur_level == 3 or cur_level == 4:
+		level_type = 2
+	elif cur_level == 5 or cur_level == 6:
+		level_type = 3
 	else:
-		level.load_level(8, level_number)
+		level_type = 4
+	if (cur_level) > 0:
+		level.load_level((cur_level - 1), level_number, level_type)
+	else:
+		level.load_level(8, level_number, 4)

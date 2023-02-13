@@ -1,6 +1,10 @@
 extends Node2D
 
-var next_level = preload("res://test_scene.tscn")
+var level_classic_1 = preload("res://levels/classic_level_1_blue.tscn")
+var level_classic_2 = preload("res://levels/classic_level_2_orange_short.tscn")
+var level_classic_3 = preload("res://levels/classic_level_3_gemlike_purple.tscn")
+var level_classic_4 = preload("res://test_scene.tscn")
+var next_level
 var current_level
 var rat = preload("res://enemy_rat.tscn")
 var scorpio = preload("res://enemies/enemy_scorpio.tscn")
@@ -35,10 +39,20 @@ func _process(delta):
 
 func _ready():
 	root = get_parent()
-	load_level(1, 0)
+	load_level(1, 0, 1)
 	stats_update()
 
-func load_level(level_number, speed_modificator):
+func load_level(level_number, speed_modificator, level_type):
+	match level_type:
+		1:
+			next_level = level_classic_1
+		2:
+			next_level = level_classic_2
+		3:
+			next_level = level_classic_3
+		4:
+			next_level = level_classic_4
+	
 	current_level = next_level.instantiate()
 	set_level(level_number, speed_modificator)
 	level_loaded = true

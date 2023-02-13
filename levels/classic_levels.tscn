@@ -47,5 +47,13 @@ script = ExtResource("1_g0x7n")
 wait_time = 0.5
 one_shot = true
 
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -30
+offset_left = -13.0
+offset_top = -10.0
+offset_right = 534.0
+offset_bottom = 322.0
+color = Color(0.188235, 0.188235, 0.188235, 1)
+
 [connection signal="timeout" from="UI/PhaseShow" to="." method="_on_phase_show_timeout"]
 [connection signal="timeout" from="NextLevelTimer" to="." method="_on_next_level_timer_timeout"]

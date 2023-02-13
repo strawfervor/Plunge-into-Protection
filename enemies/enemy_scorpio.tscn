@@ -110,6 +110,9 @@ debug_color = Color(0.776471, 0.376471, 0.592157, 0.419608)
 wait_time = 4.0
 one_shot = true
 
+[node name="HittedTimer2" type="Timer" parent="."]
+one_shot = true
+
 [node name="KillingArea" type="Area2D" parent="."]
 
 [node name="KillMeArea" type="CollisionShape2D" parent="KillingArea"]
@@ -123,5 +126,6 @@ one_shot = true
 
 [connection signal="body_shape_entered" from="ChangeDirDetect" to="." method="_on_change_dir_detect_body_shape_entered"]
 [connection signal="timeout" from="HittedTimer" to="." method="_on_hitted_timer_timeout"]
+[connection signal="timeout" from="HittedTimer2" to="." method="_on_hitted_timer_2_timeout"]
 [connection signal="body_shape_entered" from="KillingArea" to="." method="_on_killing_area_body_shape_entered"]
 [connection signal="timeout" from="DeleteItsDead" to="." method="_on_delete_its_dead_timeout"]
