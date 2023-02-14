@@ -13,7 +13,9 @@ config_version=5
 config/name="Plunge into Protection"
 run/main_scene="res://levels/main_menu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+config/icon="res://assets/icon.png"
+config/windows_native_icon="res://assets/icon.ico"
 
 [display]
 
@@ -43,4 +45,5 @@ jump={
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
 textures/canvas_textures/default_texture_filter=0
