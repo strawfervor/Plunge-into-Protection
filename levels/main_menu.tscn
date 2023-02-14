@@ -58,13 +58,27 @@ color = Color(0.188235, 0.188235, 0.188235, 1)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 0
 offset_right = 513.0
 offset_bottom = 141.0
 theme_override_fonts/font = ExtResource("2_aknnx")
 theme_override_font_sizes/font_size = 38
 text = "Plunge into Protection"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="byStrawFervor" type="Label" parent="."]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 87.0
+offset_right = 532.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("2_aknnx")
+theme_override_font_sizes/font_size = 20
+text = "by Strawfervor"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_group_ = true
@@ -273,5 +287,18 @@ position = Vector2(552, 288)
 [node name="brick_classic_blue35" parent="Node" instance=ExtResource("6_opcvp")]
 position = Vector2(568, 288)
 
+[node name="CreditsText" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 192.0
+offset_right = 448.0
+offset_bottom = 264.0
+theme_override_fonts/normal_font = ExtResource("2_aknnx")
+theme_override_font_sizes/normal_font_size = 10
+text = "Graphics inspired by retro lines (vexed)
+Sound: -
+Music: -"
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
