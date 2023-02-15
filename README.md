@@ -3,6 +3,9 @@ An arcade game being developed while learning the Godot 4 engine.
 
 This project is a clone (more or less acurate) of the Mario Bros game. There are no strict guidelines, I am simply learning the Godot engine. It is my first project, so there is a slight disorganization, especially with regards to file structure and naming conventions for variables/nodes.
 
+## Builds available on itch:
+https://strawfervor.itch.io/plunge-into-protection
+
 ## Controls
 Arrow keys/a d - move Space/z  - jump 
 
