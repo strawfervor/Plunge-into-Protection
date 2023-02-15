@@ -1,0 +1,285 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1bms8eq78iw3"]
+
+[ext_resource type="Script" path="res://levels/game_over.gd" id="1_rtoga"]
+[ext_resource type="FontFile" uid="uid://ddtxg0mem3wy" path="res://assets/Square.ttf" id="3_aob2q"]
+[ext_resource type="PackedScene" uid="uid://ccyskbv033khp" path="res://enemy_rat.tscn" id="4_0pkwp"]
+[ext_resource type="PackedScene" uid="uid://c3tvlot7rc2q8" path="res://brick_orange.tscn" id="5_5y8wy"]
+[ext_resource type="PackedScene" uid="uid://cv5kyotxeiatg" path="res://smaller_nodes/brick_classic_blue.tscn" id="6_po638"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rtoga")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -20
+layout_mode = 0
+offset_left = -11.0
+offset_top = -9.0
+offset_right = 559.0
+offset_bottom = 329.0
+color = Color(0.188235, 0.188235, 0.188235, 1)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_top = -36.0
+offset_right = 513.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("3_aob2q")
+theme_override_font_sizes/font_size = 38
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="enter" type="Label" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 4.0
+offset_right = 440.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("3_aob2q")
+theme_override_font_sizes/font_size = 20
+text = "Press enter"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="EnemyRat" parent="." instance=ExtResource("4_0pkwp")]
+position = Vector2(24, 88)
+
+[node name="EnemyRat2" parent="." instance=ExtResource("4_0pkwp")]
+position = Vector2(79, 88)
+
+[node name="EnemyRat3" parent="." instance=ExtResource("4_0pkwp")]
+position = Vector2(152, 96)
+
+[node name="EnemyRat4" parent="." instance=ExtResource("4_0pkwp")]
+position = Vector2(192, 96)
+
+[node name="EnemyRat5" parent="." instance=ExtResource("4_0pkwp")]
+position = Vector2(64, 177)
+
+[node name="EnemyRat6" parent="." instance=ExtResource("4_0pkwp")]
+position = Vector2(112, 89)
+
+[node name="EnemyRat7" parent="." instance=ExtResource("4_0pkwp")]
+position = Vector2(111, 177)
+
+[node name="EnemyRat8" parent="." instance=ExtResource("4_0pkwp")]
+position = Vector2(24, 177)
+
+[node name="EnemyRat9" parent="." instance=ExtResource("4_0pkwp")]
+position = Vector2(160, 199)
+
+[node name="EnemyRat10" parent="." instance=ExtResource("4_0pkwp")]
+position = Vector2(200, 192)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="brick_orange" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(23, 120)
+
+[node name="brick_orange32" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(7, 120)
+
+[node name="brick_orange2" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(39, 120)
+
+[node name="brick_orange3" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(55, 120)
+
+[node name="brick_orange4" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(71, 120)
+
+[node name="brick_orange5" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(87, 120)
+
+[node name="brick_orange6" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(103, 120)
+
+[node name="brick_orange7" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(120, 120)
+
+[node name="brick_orange8" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(136, 120)
+
+[node name="brick_orange9" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(152, 120)
+
+[node name="brick_orange10" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(168, 120)
+
+[node name="brick_orange11" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(184, 120)
+
+[node name="brick_orange12" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(200, 120)
+
+[node name="brick_orange13" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(216, 136)
+
+[node name="brick_orange14" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(232, 136)
+
+[node name="brick_orange15" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(248, 136)
+
+[node name="brick_orange16" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(264, 136)
+
+[node name="brick_orange17" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(280, 136)
+
+[node name="brick_orange18" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(296, 136)
+
+[node name="brick_orange19" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(312, 152)
+
+[node name="brick_orange20" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(328, 152)
+
+[node name="brick_orange21" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(344, 152)
+
+[node name="brick_orange22" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(360, 152)
+
+[node name="brick_orange23" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(376, 152)
+
+[node name="brick_orange24" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(392, 152)
+
+[node name="brick_orange25" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(408, 168)
+
+[node name="brick_orange26" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(424, 168)
+
+[node name="brick_orange27" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(440, 168)
+
+[node name="brick_orange28" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(456, 168)
+
+[node name="brick_orange29" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(472, 168)
+
+[node name="brick_orange30" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(488, 168)
+
+[node name="brick_orange31" parent="Node" instance=ExtResource("5_5y8wy")]
+position = Vector2(504, 168)
+
+[node name="brick_classic_blue" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(8, 199)
+
+[node name="brick_classic_blue2" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(24, 199)
+
+[node name="brick_classic_blue3" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(40, 199)
+
+[node name="brick_classic_blue4" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(56, 199)
+
+[node name="brick_classic_blue5" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(72, 199)
+
+[node name="brick_classic_blue6" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(88, 199)
+
+[node name="brick_classic_blue7" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(104, 199)
+
+[node name="brick_classic_blue8" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(120, 215)
+
+[node name="brick_classic_blue9" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(136, 215)
+
+[node name="brick_classic_blue10" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(152, 215)
+
+[node name="brick_classic_blue11" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(168, 215)
+
+[node name="brick_classic_blue12" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(184, 215)
+
+[node name="brick_classic_blue13" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(200, 215)
+
+[node name="brick_classic_blue15" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(248, 288)
+
+[node name="brick_classic_blue16" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(264, 288)
+
+[node name="brick_classic_blue17" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(280, 288)
+
+[node name="brick_classic_blue18" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(296, 288)
+
+[node name="brick_classic_blue19" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(312, 288)
+
+[node name="brick_classic_blue20" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(328, 288)
+
+[node name="brick_classic_blue21" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(344, 288)
+
+[node name="brick_classic_blue22" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(360, 288)
+
+[node name="brick_classic_blue23" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(376, 288)
+
+[node name="brick_classic_blue24" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(392, 288)
+
+[node name="brick_classic_blue25" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(408, 288)
+
+[node name="brick_classic_blue26" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(424, 288)
+
+[node name="brick_classic_blue27" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(440, 288)
+
+[node name="brick_classic_blue28" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(456, 288)
+
+[node name="brick_classic_blue29" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(472, 288)
+
+[node name="brick_classic_blue30" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(488, 288)
+
+[node name="brick_classic_blue31" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(504, 288)
+
+[node name="brick_classic_blue32" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(520, 288)
+
+[node name="brick_classic_blue33" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(536, 288)
+
+[node name="brick_classic_blue34" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(552, 288)
+
+[node name="brick_classic_blue35" parent="Node" instance=ExtResource("6_po638")]
+position = Vector2(568, 288)

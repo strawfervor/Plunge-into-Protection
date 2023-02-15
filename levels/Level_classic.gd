@@ -3,6 +3,7 @@ extends Node2D
 var level_classic_1 = preload("res://levels/classic_level_1_blue.tscn")
 var level_classic_2 = preload("res://levels/classic_level_2_orange_short.tscn")
 var level_classic_3 = preload("res://levels/classic_level_3_gemlike_purple.tscn")
+var level_game_over = preload("res://levels/game_over.tscn")
 var level_classic_4 = preload("res://test_scene.tscn")
 var next_level
 var current_level
@@ -85,3 +86,8 @@ func _hitted_pow_block():
 
 func _player_dead():
 	root.live_lost()
+
+func on_game_over():
+	remove_child(current_level)
+	current_level = level_game_over.instantiate()
+	add_child(current_level)

@@ -40,6 +40,19 @@ theme_override_fonts/font = ExtResource("1_iabf4")
 text = "points:"
 vertical_alignment = 1
 
+[node name="Lives" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -101.0
+offset_right = -6.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_iabf4")
+text = "Lives: 3"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="Level" type="Node2D" parent="."]
 script = ExtResource("1_g0x7n")
 

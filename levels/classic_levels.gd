@@ -34,8 +34,11 @@ func update_score():
 
 func live_lost():
 	points -= 200
-	$UI/Points.text = "SCORE: " + str(points)
-	$UI/Points.show()
+	player_lives -= 1
+	$UI/Lives.text = "Lives: " + str(player_lives)
+	$UI/Lives.show()
+	if player_lives == 0:
+		level.on_game_over()
 
 
 func _on_next_level_timer_timeout():
