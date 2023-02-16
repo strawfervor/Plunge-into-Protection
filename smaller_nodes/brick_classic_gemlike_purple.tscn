@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bj772e7rnd5f5"]
+[gd_scene load_steps=12 format=3 uid="uid://bj772e7rnd5f5"]
 
 [ext_resource type="Script" path="res://brick_orange.gd" id="1_w8v36"]
 [ext_resource type="Texture2D" uid="uid://co307dotpahey" path="res://assets/bricks/classic_gem_like_brick.png" id="2_lnbrl"]
+[ext_resource type="AudioStream" uid="uid://cwlx46jwc4slf" path="res://assets/sounds/block_hit.wav" id="3_srm6q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fuyub"]
 atlas = ExtResource("2_lnbrl")
@@ -96,6 +97,9 @@ collision_mask = 3
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_5lh28")
 debug_color = Color(0.654902, 0.517647, 0, 0.419608)
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_srm6q")
 
 [connection signal="body_entered" from="HitDetectorArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="EnemyOnFloor" to="." method="_on_enemy_on_floor_body_entered"]

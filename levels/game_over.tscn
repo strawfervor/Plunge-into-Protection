@@ -29,9 +29,8 @@ metadata/_edit_lock_ = true
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_top = -36.0
 offset_right = 513.0
-offset_bottom = 105.0
+offset_bottom = 141.0
 theme_override_fonts/font = ExtResource("3_aob2q")
 theme_override_font_sizes/font_size = 38
 text = "GAME OVER"
@@ -41,13 +40,20 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="enter" type="Label" parent="."]
-layout_mode = 0
-offset_left = 144.0
-offset_top = 4.0
-offset_right = 440.0
-offset_bottom = 120.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -19.0
+offset_right = 148.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_aob2q")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 28
 text = "Press enter"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -283,3 +289,10 @@ position = Vector2(552, 288)
 
 [node name="brick_classic_blue35" parent="Node" instance=ExtResource("6_po638")]
 position = Vector2(568, 288)
+
+[node name="Unlock_enter" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Unlock_enter" to="." method="_on_unlock_enter_timeout"]

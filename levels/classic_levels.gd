@@ -38,6 +38,8 @@ func live_lost():
 	$UI/Lives.text = "Lives: " + str(player_lives)
 	$UI/Lives.show()
 	if player_lives == 0:
+		$UI/Lives.hide()
+		$UI/Points.hide()
 		level.on_game_over()
 
 

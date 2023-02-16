@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://pmtosqdipv63"]
+[gd_scene load_steps=5 format=3 uid="uid://pmtosqdipv63"]
 
 [ext_resource type="Texture2D" uid="uid://ddyfcj1fua5cj" path="res://assets/purple_dot.png" id="1_6mq2d"]
 [ext_resource type="Script" path="res://dead_particles.gd" id="2_eae2o"]
+[ext_resource type="AudioStream" uid="uid://dyl035816iimg" path="res://assets/sounds/enemy_drop.wav" id="3_3mwbd"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c5cf1"]
 lifetime_randomness = 1.0
@@ -22,3 +23,6 @@ one_shot = true
 explosiveness = 0.3
 script = ExtResource("2_eae2o")
 metadata/_edit_group_ = true
+
+[node name="DropEnemy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3mwbd")

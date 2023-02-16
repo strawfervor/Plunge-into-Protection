@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://7vrcmfspj4ku"]
+[gd_scene load_steps=4 format=3 uid="uid://7vrcmfspj4ku"]
 
 [ext_resource type="Texture2D" uid="uid://byc7rnx4lo0fg" path="res://assets/floor/brick_solid_purple.png" id="1_snlba"]
+[ext_resource type="AudioStream" uid="uid://cwlx46jwc4slf" path="res://assets/sounds/block_hit.wav" id="2_7iu2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pbjis"]
 size = Vector2(28, 8)
@@ -16,3 +17,6 @@ texture = ExtResource("1_snlba")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_pbjis")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_7iu2a")

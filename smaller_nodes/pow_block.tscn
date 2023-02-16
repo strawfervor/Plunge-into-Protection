@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://h177q5e1n3vh"]
+[gd_scene load_steps=10 format=3 uid="uid://h177q5e1n3vh"]
 
 [ext_resource type="Script" path="res://smaller_nodes/pow_block.gd" id="1_3cjje"]
 [ext_resource type="Texture2D" uid="uid://dlxad7pl6aapf" path="res://assets/bricks/warning_block.png" id="1_4tbnx"]
+[ext_resource type="AudioStream" uid="uid://cwlx46jwc4slf" path="res://assets/sounds/block_hit.wav" id="3_0p80i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5742p"]
 atlas = ExtResource("1_4tbnx")
@@ -65,5 +66,8 @@ shape = SubResource("RectangleShape2D_e0xch")
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_1w281")
 debug_color = Color(0.921569, 0.247059, 0.352941, 0.419608)
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0p80i")
 
 [connection signal="body_shape_entered" from="CollisionDetect" to="." method="_on_collision_detect_body_shape_entered"]

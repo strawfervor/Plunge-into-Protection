@@ -18,6 +18,7 @@ func _physics_process(delta):
 	#if on ground - can jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_speed
+		$JumpSound.play()
 		emit_signal("jumping")
 
 	#change animation if player on ground
@@ -42,6 +43,7 @@ func _physics_process(delta):
 
 func dead():
 	im_dead.emit()
+	$DeadSound.play()
 	var new_resp_platform = respawn_platform.instantiate()
 	new_resp_platform.position = Vector2(255, 40)
 	add_sibling(new_resp_platform)

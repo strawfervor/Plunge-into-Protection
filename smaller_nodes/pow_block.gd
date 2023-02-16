@@ -15,6 +15,7 @@ func _ready():
 
 func _on_collision_detect_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body.is_in_group("player"):
+		$HitSound.play()
 		hitted_pow_block.emit()
 		hit_all_bricks()
 		if $AnimatedSprite2D.animation == "full":

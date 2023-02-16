@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://eqiu4p13t3kr"]
+[gd_scene load_steps=14 format=3 uid="uid://eqiu4p13t3kr"]
 
 [ext_resource type="Texture2D" uid="uid://bxrewun6s6vd" path="res://assets/player/walking.png" id="1_gn2pq"]
 [ext_resource type="Texture2D" uid="uid://dnox5fjxr1k3p" path="res://assets/player/jumping.png" id="1_rsdqq"]
 [ext_resource type="Script" path="res://Player.gd" id="1_sq8lg"]
+[ext_resource type="AudioStream" uid="uid://dpx818s805y0" path="res://assets/sounds/player_jump.wav" id="4_e4ebd"]
+[ext_resource type="AudioStream" uid="uid://ccygxie5gaoc" path="res://assets/sounds/enemy_hit.wav" id="5_ntnf5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cjir2"]
 atlas = ExtResource("1_gn2pq")
@@ -92,6 +94,12 @@ metadata/_edit_group_ = true
 
 [node name="AfterDeadTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_e4ebd")
+
+[node name="DeadSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ntnf5")
 
 [connection signal="body_shape_entered" from="CollisionArea" to="." method="_on_collision_area_body_shape_entered"]
 [connection signal="timeout" from="AfterDeadTimer" to="." method="_on_after_dead_timer_timeout"]
