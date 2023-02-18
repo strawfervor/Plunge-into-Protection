@@ -7,6 +7,7 @@ var enemies_left = 0
 var level
 var points = 0
 var level_type = 1
+var game_over = false
 
 func _ready():
 	$UI/Phase.text = "PHASE " + str(level_number)
@@ -33,11 +34,14 @@ func update_score():
 	$UI/Points.show()
 
 func live_lost():
-	points -= 200
-	player_lives -= 1
-	$UI/Lives.text = "Lives: " + str(player_lives)
-	$UI/Lives.show()
-	if player_lives == 0:
+	if game_over == false:
+		points -= 200
+		player_lives -= 1
+		$UI/Lives.text = "Lives: " + str(player_lives)
+		$UI/Lives.show()
+	
+	if player_lives == 0 && game_over == false:
+		game_over = true
 		$UI/Lives.hide()
 		$UI/Points.hide()
 		level.on_game_over()

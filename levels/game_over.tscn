@@ -47,9 +47,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -148.0
-offset_top = -19.0
+offset_top = -21.0
 offset_right = 148.0
-offset_bottom = 97.0
+offset_bottom = 95.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_aob2q")
@@ -58,7 +58,6 @@ text = "Press enter"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
 
 [node name="EnemyRat" parent="." instance=ExtResource("4_0pkwp")]
 position = Vector2(24, 88)

@@ -3,6 +3,9 @@ extends Control
 var modulate_down = true
 var unlocked = false
 
+func _ready():
+	$enter.position = Vector2(108, 129)
+
 func _process(delta):
 	if (Input.is_action_just_released("ui_accept")) && unlocked:
 		get_tree().change_scene_to_file("res://levels/main_menu.tscn")
