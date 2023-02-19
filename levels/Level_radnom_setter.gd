@@ -1,10 +1,6 @@
 extends Node2D
 
-var level_classic_1 = preload("res://levels/classic_level_1_blue.tscn")
-var level_classic_2 = preload("res://levels/classic_level_2_orange_short.tscn")
-var level_classic_3 = preload("res://levels/classic_level_3_gemlike_purple.tscn")
 var level_game_over = preload("res://levels/game_over.tscn")
-var level_classic_4 = preload("res://test_scene.tscn")
 var level_random_1 = preload("res://levels/level_random_1.tscn")
 var next_level
 var current_level
@@ -41,19 +37,11 @@ func _process(delta):
 
 func _ready():
 	root = get_parent()
-	load_level(1, 0, 1)
+	load_level(1, 0, "random")
 	stats_update()
 
 func load_level(level_number, speed_modificator, level_type):
 	match level_type:
-		1:
-			next_level = level_classic_1
-		2:
-			next_level = level_classic_2
-		3:
-			next_level = level_classic_3
-		4:
-			next_level = level_classic_4
 		"random":
 			next_level = level_random_1
 	
@@ -68,8 +56,8 @@ func stats_update():
 
 func set_level(number, speed):
 	spawner = current_level.get_node("EnemySpawner")
-	spawner.enemies_random = false #true gereting random enemies, false generete enemies from list, one by one
-	spawner.max_enemies = 1
+	spawner.enemies_random = true #true gereting random enemies, false generete enemies from list, one by one
+	spawner.max_enemies = number
 	spawner.enemies_list = levels_array[number] #list of enemies to spawn (rat, scorpio, fly)
 	spawner.speed_modificator = speed
 	spawner.add_points.connect(_add_points)

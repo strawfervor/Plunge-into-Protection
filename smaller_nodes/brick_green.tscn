@@ -1,0 +1,111 @@
+[gd_scene load_steps=13 format=3 uid="uid://er162kpv8ikm"]
+
+[ext_resource type="Script" path="res://brick_orange.gd" id="1_yd20e"]
+[ext_resource type="Texture2D" uid="uid://c2rxi64o31tdp" path="res://assets/bricks/brick_green.png" id="2_0tbyp"]
+[ext_resource type="AudioStream" uid="uid://cwlx46jwc4slf" path="res://assets/sounds/block_hit.wav" id="3_7pjr7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye86p"]
+atlas = ExtResource("2_0tbyp")
+region = Rect2(0, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkphf"]
+atlas = ExtResource("2_0tbyp")
+region = Rect2(0, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42msa"]
+atlas = ExtResource("2_0tbyp")
+region = Rect2(16, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7xet"]
+atlas = ExtResource("2_0tbyp")
+region = Rect2(32, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cen3p"]
+atlas = ExtResource("2_0tbyp")
+region = Rect2(48, 0, 8, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ku6b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye86p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkphf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42msa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7xet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cen3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7xet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42msa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkphf")
+}],
+"loop": false,
+"name": &"hitted",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44y6f"]
+size = Vector2(8, 5.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffrfr"]
+size = Vector2(4, 3.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lh28"]
+size = Vector2(10, 4)
+
+[node name="brick_green" type="AnimatableBody2D" groups=["brick", "floor"]]
+position = Vector2(0, -4)
+scale = Vector2(2, 2)
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_yd20e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5ku6b")
+animation = &"hitted"
+
+[node name="ColisionStandard" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_44y6f")
+
+[node name="HitDetectorArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="HitDetector" type="CollisionShape2D" parent="HitDetectorArea"]
+position = Vector2(0, 4.625)
+shape = SubResource("RectangleShape2D_ffrfr")
+debug_color = Color(0.945098, 0, 0.592157, 0.419608)
+
+[node name="EnemyOnFloor" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyOnFloor"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_5lh28")
+debug_color = Color(0.654902, 0.517647, 0, 0.419608)
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7pjr7")
+
+[connection signal="body_entered" from="HitDetectorArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="EnemyOnFloor" to="." method="_on_enemy_on_floor_body_entered"]
+[connection signal="body_exited" from="EnemyOnFloor" to="." method="_on_enemy_on_floor_body_exited"]

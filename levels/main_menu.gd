@@ -14,3 +14,7 @@ func _on_exit_pressed():
 
 func _on_credits_pressed():
 	$CreditsText.show()
+
+
+func _on_random_pressed():
+	get_tree().change_scene_to_file("res://levels/random_levels.tscn")

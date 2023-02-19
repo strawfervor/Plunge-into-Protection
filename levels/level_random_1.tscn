@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://8wnj5s1yps4"]
+
+[ext_resource type="PackedScene" uid="uid://eqiu4p13t3kr" path="res://Player.tscn" id="1_cbgsu"]
+[ext_resource type="Script" path="res://levels/random_level_generator.gd" id="1_hd8me"]
+[ext_resource type="PackedScene" uid="uid://7vrcmfspj4ku" path="res://smaller_nodes/static_brick_purple.tscn" id="3_4a18s"]
+[ext_resource type="PackedScene" uid="uid://bxgnpy7efxv2u" path="res://enemy_spawner.tscn" id="4_2svgm"]
+[ext_resource type="Texture2D" uid="uid://bv8e82ggpj1p" path="res://assets/misc/pipe.png" id="5_b3vby"]
+[ext_resource type="PackedScene" uid="uid://h177q5e1n3vh" path="res://smaller_nodes/pow_block.tscn" id="6_0m2x7"]
+
+[node name="test-scene" type="Node2D"]
+script = ExtResource("1_hd8me")
+
+[node name="Player" parent="." instance=ExtResource("1_cbgsu")]
+position = Vector2(256, 264)
+
+[node name="bricssss" type="Node" parent="."]
+
+[node name="StaticBrickPurple" parent="bricssss" instance=ExtResource("3_4a18s")]
+position = Vector2(24, 296)
+
+[node name="StaticBrickPurple2" parent="bricssss" instance=ExtResource("3_4a18s")]
+position = Vector2(80, 296)
+
+[node name="StaticBrickPurple3" parent="bricssss" instance=ExtResource("3_4a18s")]
+position = Vector2(136, 296)
+
+[node name="StaticBrickPurple4" parent="bricssss" instance=ExtResource("3_4a18s")]
+position = Vector2(192, 296)
+
+[node name="StaticBrickPurple5" parent="bricssss" instance=ExtResource("3_4a18s")]
+position = Vector2(248, 296)
+
+[node name="StaticBrickPurple6" parent="bricssss" instance=ExtResource("3_4a18s")]
+position = Vector2(304, 296)
+
+[node name="StaticBrickPurple7" parent="bricssss" instance=ExtResource("3_4a18s")]
+position = Vector2(360, 296)
+
+[node name="StaticBrickPurple8" parent="bricssss" instance=ExtResource("3_4a18s")]
+position = Vector2(416, 296)
+
+[node name="StaticBrickPurple9" parent="bricssss" instance=ExtResource("3_4a18s")]
+position = Vector2(472, 296)
+
+[node name="StaticBrickPurple10" parent="bricssss" instance=ExtResource("3_4a18s")]
+position = Vector2(528, 296)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("4_2svgm")]
+position = Vector2(256, 16)
+
+[node name="Pipe" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(0, 272)
+texture = ExtResource("5_b3vby")
+
+[node name="Pipe3" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(24, 68)
+texture = ExtResource("5_b3vby")
+
+[node name="Pipe2" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(488, 68)
+texture = ExtResource("5_b3vby")
+flip_h = true
+
+[node name="Pipe4" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(512, 272)
+texture = ExtResource("5_b3vby")
+flip_h = true
+
+[node name="POW_block" parent="." instance=ExtResource("6_0m2x7")]
+position = Vector2(-48, 150)

@@ -34,7 +34,12 @@ grow_vertical = 0
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_0ot7f")
-text = "Start"
+text = "Classic"
+
+[node name="Random" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_0ot7f")
+text = "Random"
 
 [node name="Credits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -290,15 +295,18 @@ position = Vector2(568, 288)
 [node name="CreditsText" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 320.0
-offset_top = 192.0
+offset_top = 183.0
 offset_right = 448.0
-offset_bottom = 264.0
+offset_bottom = 280.0
 theme_override_fonts/normal_font = ExtResource("2_aknnx")
 theme_override_font_sizes/normal_font_size = 10
 text = "Graphics inspired by retro lines (vexed)
-Sound: -
+
+Sound: SubspaceAudio @ OpenGameART.org
+
 Music: -"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Random" to="." method="_on_random_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
