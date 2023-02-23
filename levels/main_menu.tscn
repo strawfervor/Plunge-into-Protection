@@ -24,12 +24,17 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -79.0
-offset_right = 20.0
-offset_bottom = -39.0
+offset_left = -30.0
+offset_top = -138.0
+offset_right = 30.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Story" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_0ot7f")
+text = "Story"
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -306,6 +311,7 @@ Sound: SubspaceAudio @ OpenGameART.org
 
 Music: -"
 
+[connection signal="pressed" from="VBoxContainer/Story" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Random" to="." method="_on_random_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
