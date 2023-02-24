@@ -649,3 +649,8 @@ position = Vector2(1304, 136)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="CameraBody"]
+
+[node name="Timer_next_scene" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer_next_scene" to="." method="_on_timer_next_scene_timeout"]

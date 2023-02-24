@@ -12,3 +12,10 @@ func _process(delta):
 			zooming.x += 0.1
 			zooming.y += 0.1
 			$CameraBody/Camera2D.set_zoom(zooming)
+		if zooming.x >= 4.2:
+			if $Timer_next_scene.is_stopped():
+				$Timer_next_scene.start()
+
+
+func _on_timer_next_scene_timeout():
+	print("Timeout next scene")
