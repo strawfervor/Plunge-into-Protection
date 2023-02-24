@@ -311,7 +311,7 @@ Sound: SubspaceAudio @ OpenGameART.org
 
 Music: -"
 
-[connection signal="pressed" from="VBoxContainer/Story" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Story" to="." method="_on_story_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Random" to="." method="_on_random_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
