@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://8h5cjsqt2wij"]
+[gd_scene load_steps=24 format=3 uid="uid://8h5cjsqt2wij"]
 
 [ext_resource type="PackedScene" uid="uid://dq7qp084n1er3" path="res://smaller_nodes/brick_blue.tscn" id="1_lntlx"]
 [ext_resource type="PackedScene" uid="uid://bm7ypa2ff46y3" path="res://smaller_nodes/brick_white.tscn" id="2_iibsx"]
@@ -734,6 +734,22 @@ texture = ExtResource("5_m18mg")
 [sub_resource type="TileSet" id="TileSet_b0pk3"]
 sources/0 = SubResource("TileSetAtlasSource_buafs")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cb605"]
+emission_shape = 6
+emission_ring_axis = Vector3(3, 3, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+particle_flag_disable_z = true
+direction = Vector3(1, -1, 0)
+spread = 73.42
+gravity = Vector3(0, 98, 0)
+initial_velocity_max = 105.27
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 2.0
+color = Color(0, 0.188235, 1, 1)
+
 [node name="intro_story_2" type="Node2D"]
 
 [node name="Node" type="Node" parent="."]
@@ -1032,3 +1048,8 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_b0pk3")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 131072, 0, 1, 131072, 0, 2, 131072, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 6, 131072, 0, 7, 131072, 0, 8, 131072, 0, 65535, 131072, 0, 65534, 131072, 0, 65533, 131072, 0, 65532, 131072, 0, 65531, 131072, 0, 65530, 131072, 0, 65529, 131072, 0, 9, 131072, 0, 10, 131072, 0, 11, 131072, 0, 12, 131072, 0, 13, 131072, 0, 14, 131072, 0, 15, 131072, 0, 16, 131072, 0, 17, 131072, 0, 18, 131072, 0, 19, 131072, 0, 20, 131072, 0, 21, 131072, 0, 22, 131072, 0, 23, 131072, 0, 24, 131072, 0, 25, 131072, 0, 26, 131072, 0, 27, 131072, 0, 28, 131072, 0, 29, 131072, 0, -65523, 524288, 6, -65513, 589824, 6, -65531, 917504, 6, 30, 196608, 0, 31, 196608, 0, 32, 196608, 0, 33, 196608, 0, 34, 196608, 0, 35, 196608, 0, 36, 196608, 0, 37, 196608, 0, 38, 196608, 0, 39, 196608, 0, 40, 196608, 0, 41, 196608, 0, -327643, 1048576, 3, -262107, 1048576, 4, -196571, 1048576, 5, -131035, 1048576, 6, -327642, 1114112, 3, -262106, 1114112, 4, -196570, 1114112, 5, -131034, 1114112, 6, -327641, 1179648, 3, -262105, 1179648, 4, -196569, 1179648, 5, -131033, 1179648, 6, -65498, 524288, 5, -196589, 1179648, 27, -131053, 1179648, 28, -65517, 1179648, 29, -196588, 1245184, 27, -131052, 1245184, 28, -65516, 1245184, 29, -65509, 983040, 29, -65508, 1048576, 29, -65507, 1114112, 29, -65521, 983040, 14, -65520, 1048576, 14, -65519, 1114112, 14, -458711, 720896, 8, -393201, 524288, 8, -393200, 589824, 8, -393219, 327680, 8, -458722, 655360, 8, -458721, 720896, 8, -262150, 917504, 3, -196614, 917504, 4, -131078, 917504, 5, -131079, 851968, 5, -196615, 851968, 4, -262151, 851968, 3, -65543, 524288, 2, -7, 524288, 2, -65529, 393216, 5, -65528, 786432, 6)
+
+[node name="water" type="GPUParticles2D" parent="."]
+position = Vector2(112, 222)
+process_material = SubResource("ParticleProcessMaterial_cb605")
+lifetime = 0.5
