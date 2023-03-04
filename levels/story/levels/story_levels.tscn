@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://b472bnp43nyvf"]
+
+[ext_resource type="Script" path="res://levels/story/levels/story_levels.gd" id="1_avc7m"]
+[ext_resource type="FontFile" uid="uid://ddtxg0mem3wy" path="res://assets/Square.ttf" id="2_euadw"]
+
+[node name="StoryLevels" type="Node2D"]
+script = ExtResource("1_avc7m")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Phase" type="Label" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 18.0
+offset_right = 40.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_euadw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PhaseShow" type="Timer" parent="UI"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Points" type="Label" parent="UI"]
+offset_left = 5.0
+offset_right = 189.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_euadw")
+text = "points:"
+vertical_alignment = 1
+
+[node name="Lives" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -101.0
+offset_right = -6.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_euadw")
+text = "Lives: 3"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NextLevelTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -30
+offset_left = -13.0
+offset_top = -10.0
+offset_right = 534.0
+offset_bottom = 322.0
+color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[connection signal="timeout" from="UI/PhaseShow" to="." method="_on_phase_show_timeout"]
+[connection signal="timeout" from="NextLevelTimer" to="." method="_on_next_level_timer_timeout"]

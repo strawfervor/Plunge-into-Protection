@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://8h5cjsqt2wij"]
+[gd_scene load_steps=26 format=3 uid="uid://8h5cjsqt2wij"]
 
+[ext_resource type="Script" path="res://levels/story/intro/intro_story_2.gd" id="1_kg54f"]
 [ext_resource type="PackedScene" uid="uid://dq7qp084n1er3" path="res://smaller_nodes/brick_blue.tscn" id="1_lntlx"]
 [ext_resource type="PackedScene" uid="uid://bm7ypa2ff46y3" path="res://smaller_nodes/brick_white.tscn" id="2_iibsx"]
 [ext_resource type="PackedScene" uid="uid://eqiu4p13t3kr" path="res://Player.tscn" id="3_ujtai"]
@@ -750,7 +751,11 @@ orbit_velocity_max = 0.0
 scale_max = 2.0
 color = Color(0, 0.188235, 1, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14s8a"]
+size = Vector2(18, 20)
+
 [node name="intro_story_2" type="Node2D"]
+script = ExtResource("1_kg54f")
 
 [node name="Node" type="Node" parent="."]
 
@@ -1053,3 +1058,24 @@ layer_0/tile_data = PackedInt32Array(0, 131072, 0, 1, 131072, 0, 2, 131072, 0, 3
 position = Vector2(112, 222)
 process_material = SubResource("ParticleProcessMaterial_cb605")
 lifetime = 0.5
+
+[node name="nextLevel" type="Area2D" parent="."]
+position = Vector2(112, 224)
+
+[node name="nextLevelShape" type="CollisionShape2D" parent="nextLevel"]
+position = Vector2(-2, -2)
+shape = SubResource("RectangleShape2D_14s8a")
+
+[node name="nextLevelTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -30
+offset_left = -13.0
+offset_top = -10.0
+offset_right = 534.0
+offset_bottom = 322.0
+color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[connection signal="body_entered" from="nextLevel" to="." method="_on_next_level_body_entered"]
+[connection signal="timeout" from="nextLevelTimer" to="." method="_on_next_level_timer_timeout"]

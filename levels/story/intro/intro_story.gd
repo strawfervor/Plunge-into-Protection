@@ -18,4 +18,4 @@ func _process(delta):
 
 
 func _on_timer_next_scene_timeout():
-	print("Timeout next scene")
+	get_tree().change_scene_to_file("res://levels/story/intro/intro_story_2.tscn")
