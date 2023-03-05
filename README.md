@@ -14,6 +14,6 @@ Plunge into Protection is a retro arcade game where you take on the role of a he
 
 You have certainly never encountered such unique gameplay!
 
-The game offers two modes of gameplay - Classic, which refers to the original version, and Random, where the player faces random waves of enemies on a randomly generated level. Both modes never end. It's possible that a Story mode will be added later, with manually created original levels.
+The game offers two modes of gameplay - Classic, which refers to the original version, and Random, where the player faces random waves of enemies on a randomly generated level. Both modes never end.
 
 The game is under active development. 

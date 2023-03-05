@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=3 uid="uid://br0a6l5ajiipo"]
+
+[ext_resource type="Script" path="res://levels/story/intro/intro_enemy_rat.gd" id="1_be0kx"]
+[ext_resource type="Texture2D" uid="uid://imxuc7is2tty" path="res://assets/enemies/rat.png" id="2_sa07q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydv5f"]
+atlas = ExtResource("2_sa07q")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbnbs"]
+atlas = ExtResource("2_sa07q")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rgv0"]
+atlas = ExtResource("2_sa07q")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxcsa"]
+atlas = ExtResource("2_sa07q")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b77tq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydv5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbnbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rgv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxcsa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmyad"]
+size = Vector2(24, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2roiw"]
+size = Vector2(28, 6.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82r8m"]
+size = Vector2(28, 20)
+
+[node name="EnemyRat" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_be0kx")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_b77tq")
+frame_progress = 0.80335
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jmyad")
+
+[node name="ChangeDirDetect" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeDirDetect"]
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_2roiw")
+debug_color = Color(0.776471, 0.376471, 0.592157, 0.419608)
+
+[node name="HittedTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="KillingArea" type="Area2D" parent="."]
+
+[node name="KillMeArea" type="CollisionShape2D" parent="KillingArea"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_82r8m")
+debug_color = Color(0.929412, 0, 0.658824, 0.419608)
+
+[node name="DeleteItsDead" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_shape_entered" from="ChangeDirDetect" to="." method="_on_change_dir_detect_body_shape_entered"]
+[connection signal="timeout" from="HittedTimer" to="." method="_on_hitted_timer_timeout"]
+[connection signal="body_shape_entered" from="KillingArea" to="." method="_on_killing_area_body_shape_entered"]
+[connection signal="timeout" from="DeleteItsDead" to="." method="_on_delete_its_dead_timeout"]

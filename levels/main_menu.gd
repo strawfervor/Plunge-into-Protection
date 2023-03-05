@@ -21,4 +21,4 @@ func _on_random_pressed():
 
 
 func _on_story_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://levels/story/intro/intro_story.tscn")
