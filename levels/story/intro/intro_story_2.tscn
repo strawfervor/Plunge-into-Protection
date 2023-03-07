@@ -773,6 +773,54 @@ position = Vector2(78, 140)
 [node name="brick_blue22" parent="Node" instance=ExtResource("1_lntlx")]
 position = Vector2(78, 172)
 
+[node name="brick_blue72" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(238, 167)
+
+[node name="brick_blue73" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(222, 167)
+
+[node name="brick_blue74" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(206, 167)
+
+[node name="brick_blue75" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(190, 167)
+
+[node name="brick_blue76" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(174, 167)
+
+[node name="brick_blue77" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(158, 167)
+
+[node name="brick_blue82" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(398, 167)
+
+[node name="brick_blue83" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(382, 167)
+
+[node name="brick_blue84" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(366, 167)
+
+[node name="brick_blue85" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(350, 167)
+
+[node name="brick_blue86" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(334, 167)
+
+[node name="brick_blue87" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(318, 167)
+
+[node name="brick_blue78" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(142, 167)
+
+[node name="brick_blue79" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(126, 167)
+
+[node name="brick_blue80" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(110, 167)
+
+[node name="brick_blue81" parent="Node" instance=ExtResource("1_lntlx")]
+position = Vector2(94, 167)
+
 [node name="brick_blue23" parent="Node" instance=ExtResource("1_lntlx")]
 position = Vector2(78, 124)
 
@@ -980,59 +1028,11 @@ position = Vector2(350, 76)
 [node name="brick_blue60" parent="Node" instance=ExtResource("1_lntlx")]
 position = Vector2(366, 76)
 
-[node name="brick_white" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(94, 167)
-
-[node name="brick_white2" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(110, 167)
-
-[node name="brick_white3" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(126, 167)
-
-[node name="brick_white4" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(142, 167)
-
-[node name="brick_white5" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(158, 167)
-
-[node name="brick_white6" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(174, 167)
-
-[node name="brick_white7" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(190, 167)
-
-[node name="brick_white8" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(206, 167)
-
-[node name="brick_white9" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(222, 167)
-
-[node name="brick_white10" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(238, 167)
-
 [node name="brick_white17" parent="Node" instance=ExtResource("2_iibsx")]
 visible = false
 position = Vector2(254, 152)
 collision_layer = 6
 collision_mask = 6
-
-[node name="brick_white11" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(318, 167)
-
-[node name="brick_white12" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(334, 167)
-
-[node name="brick_white13" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(350, 167)
-
-[node name="brick_white14" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(366, 167)
-
-[node name="brick_white15" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(382, 167)
-
-[node name="brick_white16" parent="Node" instance=ExtResource("2_iibsx")]
-position = Vector2(398, 167)
 
 [node name="brick_blue61" parent="Node" instance=ExtResource("1_lntlx")]
 position = Vector2(382, 76)
@@ -1096,7 +1096,7 @@ position = Vector2(216, 248)
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_b0pk3")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 131072, 0, 1, 131072, 0, 2, 131072, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 6, 131072, 0, 7, 131072, 0, 8, 131072, 0, 65535, 131072, 0, 65534, 131072, 0, 65533, 131072, 0, 65532, 131072, 0, 65531, 131072, 0, 65530, 131072, 0, 65529, 131072, 0, 9, 131072, 0, 10, 131072, 0, 11, 131072, 0, 12, 131072, 0, 13, 131072, 0, 14, 131072, 0, 15, 131072, 0, 16, 131072, 0, 17, 131072, 0, 18, 131072, 0, 19, 131072, 0, 20, 131072, 0, 21, 131072, 0, 22, 131072, 0, 23, 131072, 0, 24, 131072, 0, 25, 131072, 0, 26, 131072, 0, 27, 131072, 0, 28, 131072, 0, 29, 131072, 0, -65523, 524288, 6, -65513, 589824, 6, -65531, 917504, 6, 30, 196608, 0, 31, 196608, 0, 32, 196608, 0, 33, 196608, 0, 34, 196608, 0, 35, 196608, 0, 36, 196608, 0, 37, 196608, 0, 38, 196608, 0, 39, 196608, 0, 40, 196608, 0, 41, 196608, 0, -327643, 1048576, 3, -262107, 1048576, 4, -196571, 1048576, 5, -131035, 1048576, 6, -327642, 1114112, 3, -262106, 1114112, 4, -196570, 1114112, 5, -131034, 1114112, 6, -327641, 1179648, 3, -262105, 1179648, 4, -196569, 1179648, 5, -131033, 1179648, 6, -65498, 524288, 5, -196589, 1179648, 27, -131053, 1179648, 28, -65517, 1179648, 29, -196588, 1245184, 27, -131052, 1245184, 28, -65516, 1245184, 29, -65509, 983040, 29, -65508, 1048576, 29, -65507, 1114112, 29, -65521, 983040, 14, -65520, 1048576, 14, -65519, 1114112, 14, -458711, 720896, 8, -393201, 524288, 8, -393200, 589824, 8, -393219, 327680, 8, -458722, 655360, 8, -458721, 720896, 8, -262150, 917504, 3, -196614, 917504, 4, -131078, 917504, 5, -131079, 851968, 5, -196615, 851968, 4, -262151, 851968, 3, -65543, 524288, 2, -7, 524288, 2, -65529, 393216, 5, -65528, 786432, 6)
+layer_0/tile_data = PackedInt32Array(0, 131072, 0, 1, 131072, 0, 2, 131072, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 6, 131072, 0, 7, 131072, 0, 8, 131072, 0, 65535, 131072, 0, 65534, 131072, 0, 65533, 131072, 0, 65532, 131072, 0, 65531, 131072, 0, 65530, 131072, 0, 65529, 131072, 0, 9, 131072, 0, 10, 131072, 0, 11, 131072, 0, 12, 131072, 0, 13, 131072, 0, 14, 131072, 0, 15, 131072, 0, 16, 131072, 0, 17, 131072, 0, 18, 131072, 0, 19, 131072, 0, 20, 131072, 0, 21, 131072, 0, 22, 131072, 0, 23, 131072, 0, 24, 131072, 0, 25, 131072, 0, 26, 131072, 0, 27, 131072, 0, 28, 131072, 0, 29, 131072, 0, -65523, 524288, 6, -65513, 589824, 6, -65531, 917504, 6, 30, 196608, 0, 31, 196608, 0, 32, 196608, 0, 33, 196608, 0, 34, 196608, 0, 35, 196608, 0, 36, 196608, 0, 37, 196608, 0, 38, 196608, 0, 39, 196608, 0, 40, 196608, 0, 41, 196608, 0, -327643, 1048576, 3, -262107, 1048576, 4, -196571, 1048576, 5, -131035, 1048576, 6, -327642, 1114112, 3, -262106, 1114112, 4, -196570, 1114112, 5, -131034, 1114112, 6, -327641, 1179648, 3, -262105, 1179648, 4, -196569, 1179648, 5, -131033, 1179648, 6, -65498, 524288, 5, -196589, 1179648, 27, -131053, 1179648, 28, -65517, 1179648, 29, -196588, 1245184, 27, -131052, 1245184, 28, -65516, 1245184, 29, -65509, 983040, 29, -65508, 1048576, 29, -65507, 1114112, 29, -65521, 983040, 14, -65520, 1048576, 14, -65519, 1114112, 14, -458711, 720896, 8, -393201, 524288, 8, -393200, 589824, 8, -458722, 655360, 8, -458721, 720896, 8, -262150, 917504, 3, -196614, 917504, 4, -131078, 917504, 5, -131079, 851968, 5, -196615, 851968, 4, -262151, 851968, 3, -65543, 524288, 2, -7, 524288, 2, -65529, 393216, 5, -65528, 786432, 6)
 
 [node name="water" type="GPUParticles2D" parent="."]
 position = Vector2(104, 151)
@@ -1171,6 +1171,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(13.5432, 7.86838)
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="nextLevel" to="." method="_on_next_level_body_entered"]
 [connection signal="timeout" from="nextLevelTimer" to="." method="_on_next_level_timer_timeout"]
