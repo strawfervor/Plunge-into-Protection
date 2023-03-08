@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://co67i1wlkw1j2" path="res://assets/main_menu_theme.tres" id="2_pl83h"]
 
 [node name="pause_menu" type="Control"]
+process_mode = 2
 self_modulate = Color(1, 1, 1, 0.556863)
 layout_mode = 3
 anchors_preset = 15
@@ -13,7 +14,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0pmqh")
-metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0.541176)
@@ -23,21 +23,14 @@ offset_top = -8.0
 offset_right = 520.0
 offset_bottom = 312.0
 color = Color(0, 0, 0, 1)
-metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -28.0
-offset_top = -6.0
-offset_right = 29.0
-offset_bottom = 98.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 224.0
+offset_top = 159.0
+offset_right = 281.0
+offset_bottom = 263.0
 alignment = 1
 
 [node name="pause" type="Label" parent="VBoxContainer"]
@@ -59,3 +52,6 @@ text = "Resume"
 layout_mode = 2
 theme = ExtResource("2_pl83h")
 text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

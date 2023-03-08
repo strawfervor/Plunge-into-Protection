@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2vp4a0cbbu3g"]
+[gd_scene load_steps=5 format=3 uid="uid://d2vp4a0cbbu3g"]
 
 [ext_resource type="Script" path="res://levels/random_levels.gd" id="1_6l0ot"]
 [ext_resource type="FontFile" uid="uid://ddtxg0mem3wy" path="res://assets/Square.ttf" id="2_se2xu"]
 [ext_resource type="Script" path="res://levels/Level_radnom_setter.gd" id="3_4tax6"]
+[ext_resource type="PackedScene" uid="uid://b6f26lhny7t2t" path="res://smaller_nodes/pause_menu.tscn" id="4_6uyal"]
 
 [node name="RandomLevels" type="Node2D"]
 script = ExtResource("1_6l0ot")
@@ -67,6 +68,10 @@ offset_top = -10.0
 offset_right = 534.0
 offset_bottom = 322.0
 color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[node name="pause_menu" parent="." instance=ExtResource("4_6uyal")]
+offset_top = -1.0
+offset_bottom = -1.0
 
 [connection signal="timeout" from="UI/PhaseShow" to="." method="_on_phase_show_timeout"]
 [connection signal="timeout" from="NextLevelTimer" to="." method="_on_next_level_timer_timeout"]

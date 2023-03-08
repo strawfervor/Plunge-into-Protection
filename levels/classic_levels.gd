@@ -61,3 +61,9 @@ func _on_next_level_timer_timeout():
 		level.load_level((cur_level - 1), level_number, level_type)
 	else:
 		level.load_level(8, level_number, 4)
+
+func _input(ev):
+	if Input.is_action_just_pressed("pause"):
+		$pause_menu.show()
+		$pause_menu.pause()
+		get_tree().paused = true

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://jot0eqhqiiw0"]
+[gd_scene load_steps=5 format=3 uid="uid://jot0eqhqiiw0"]
 
 [ext_resource type="Script" path="res://levels/easy_mode/easy_levels.gd" id="1_hr4tr"]
 [ext_resource type="FontFile" uid="uid://ddtxg0mem3wy" path="res://assets/Square.ttf" id="2_eije2"]
 [ext_resource type="Script" path="res://levels/easy_mode/easy_levels_setter.gd" id="3_3g24t"]
+[ext_resource type="PackedScene" uid="uid://b6f26lhny7t2t" path="res://smaller_nodes/pause_menu.tscn" id="4_ww6l8"]
 
 [node name="EasyLevels" type="Node2D"]
 script = ExtResource("1_hr4tr")
@@ -67,6 +68,8 @@ offset_top = -10.0
 offset_right = 534.0
 offset_bottom = 322.0
 color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[node name="pause_menu" parent="." instance=ExtResource("4_ww6l8")]
 
 [connection signal="timeout" from="UI/PhaseShow" to="." method="_on_phase_show_timeout"]
 [connection signal="timeout" from="NextLevelTimer" to="." method="_on_next_level_timer_timeout"]

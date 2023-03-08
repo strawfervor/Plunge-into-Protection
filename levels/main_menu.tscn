@@ -34,7 +34,7 @@ grow_vertical = 0
 [node name="Story" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_0ot7f")
-text = "Intro"
+text = "Story"
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
