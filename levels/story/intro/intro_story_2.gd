@@ -23,4 +23,4 @@ func _on_next_level_body_entered(body):
 
 
 func _on_next_level_timer_timeout():
-	get_tree().change_scene_to_file("res://levels/classic_levels.tscn")
+	get_tree().change_scene_to_file("res://levels/easy_mode/easy_levels.tscn")
