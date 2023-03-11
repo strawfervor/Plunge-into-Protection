@@ -305,11 +305,6 @@ offset_right = 448.0
 offset_bottom = 280.0
 theme_override_fonts/normal_font = ExtResource("2_aknnx")
 theme_override_font_sizes/normal_font_size = 10
-text = "Graphics inspired by retro lines (vexed)
-
-Sound: SubspaceAudio @ OpenGameART.org
-
-Music: -"
 
 [connection signal="pressed" from="VBoxContainer/Story" to="." method="_on_story_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
