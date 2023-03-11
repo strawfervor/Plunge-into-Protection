@@ -77,6 +77,8 @@ func set_level(number, speed):
 	current_level.get_node("POW_block").status = pow_block_status
 
 func on_finished_level():
+	if pow_block_status < 3:
+		pow_block_status += 1
 	level_loaded = false
 	remove_child(current_level)
 	next_level_please.emit()
