@@ -37,7 +37,7 @@ func _process(delta):
 
 func _ready():
 	root = get_parent()
-	load_level(1, 0, "random")
+	load_level(0, 0, "random")
 	stats_update()
 
 func load_level(level_number, speed_modificator, level_type):
