@@ -2,7 +2,12 @@ extends Node2D
 
 var zooming = Vector2(1, 1)
 
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("jump"):
+		get_tree().change_scene_to_file("res://levels/story/intro/intro_story_2.tscn")
+
 func _process(delta):
+	$CameraBody/Phase.modulate.a -= 0.3 * delta
 	if $CameraBody.position.x  > 258:
 		$CameraBody.position.x -= 2
 	if $CameraBody.position.x  <= 258:
