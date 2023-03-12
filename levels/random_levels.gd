@@ -54,6 +54,7 @@ func _on_next_level_timer_timeout():
 
 func _input(ev):
 	if Input.is_action_just_pressed("pause"):
+		$UI/Phase.hide()
 		$pause_menu.show()
 		$pause_menu.pause()
 		get_tree().paused = true
