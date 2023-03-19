@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://eta68mow4pnb"]
+
+[ext_resource type="Script" path="res://smaller_nodes/background_music.gd" id="1_tud61"]
+[ext_resource type="AudioStream" uid="uid://dy2gurnvp2yba" path="res://assets/NarioVsZonik.ogg" id="2_jpvi4"]
+
+[node name="background_music" type="Node"]
+process_mode = 3
+script = ExtResource("1_tud61")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("2_jpvi4")
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

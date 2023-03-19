@@ -48,10 +48,16 @@ layout_mode = 2
 theme = ExtResource("2_pl83h")
 text = "Resume"
 
+[node name="mute" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_pl83h")
+text = "mute"
+
 [node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_pl83h")
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/mute" to="." method="_on_mute_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

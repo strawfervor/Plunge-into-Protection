@@ -26,6 +26,6 @@ func _unhandled_input(event):
 	if $VBoxContainer/Random.has_focus():
 		$CreditsText.text = "Defeat growing waves of random enemies"
 	if $VBoxContainer/Credits.has_focus():
-		$CreditsText.text = "Graphics inspired by retro lines (vexed)\n\nSound: SubspaceAudio @ OpenGameART.org\n\nMusic: -"
+		$CreditsText.text = "Graphics inspired by retro lines (vexed)\n\nSound: SubspaceAudio @ OpenGameART.org\n\nMusic: Nario Versus Zonik by Ragnar Random"
 	if $VBoxContainer/Exit.has_focus():
 		$CreditsText.text = " "
