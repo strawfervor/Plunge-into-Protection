@@ -7,7 +7,9 @@ This project is a clone (more or less acurate) of the Mario Bros game. There are
 https://strawfervor.itch.io/plunge-into-protection
 
 ## Controls
-Arrow keys/a d - move Space/z  - jump 
+Arrow keys/a d - move
+Space/z  - jump
+Esc - pause menu
 
 ## Fancy description:
 Plunge into Protection is a retro arcade game where you take on the role of a heroic plumber, fighting back against creatures that have polluted the city's waterways. Armed with nothing but your trusty head, you must knock these creatures off the... place where they are.
