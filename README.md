@@ -10,6 +10,7 @@ https://strawfervor.itch.io/plunge-into-protection
 Arrow keys/a d - move
 Space/z  - jump
 Esc - pause menu
+m - mute toggle (also avilable in menu)
 
 ## Fancy description:
 Plunge into Protection is a retro arcade game where you take on the role of a heroic plumber, fighting back against creatures that have polluted the city's waterways. Armed with nothing but your trusty head, you must knock these creatures off the... place where they are.
@@ -24,5 +25,3 @@ The game offers three modes of gameplay:
 
     Random, where the player faces random waves of enemies on a randomly generated level​​
     ​All modes are endless!
-
-The game is under active development.
