@@ -57,7 +57,7 @@ func stats_update():
 func set_level(number, speed):
 	spawner = current_level.get_node("EnemySpawner")
 	spawner.enemies_random = true #true gereting random enemies, false generete enemies from list, one by one
-	spawner.max_enemies = number
+	spawner.max_enemies = number + 1
 	spawner.enemies_list = levels_array[number] #list of enemies to spawn (rat, scorpio, fly)
 	spawner.speed_modificator = speed
 	spawner.add_points.connect(_add_points)
